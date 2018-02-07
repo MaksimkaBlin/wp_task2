@@ -99,9 +99,6 @@
                         <?php endif ; ?>
 
 
-
-
-
                 </div>
                 <!-- End Main Column -->
                 <?php get_sidebar();?>

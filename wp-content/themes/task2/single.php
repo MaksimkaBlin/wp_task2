@@ -5,39 +5,39 @@
         <div class="row margin-vert-30">
             <!-- Main Column -->
             <div class="col-md-9">
+                <?php if (have_posts()) :?>
+                <?php while (have_posts()) : the_post(); ?>
                 <div class="blog-post">
                     <div class="blog-item-header">
                         <h2>
-                            <a href="#">
-                                Just a Sample Blog Bost
-                            </a>
+                            <a href="#"><?php the_title();?></a>
                         </h2>
                         <!-- Date -->
                         <div class="blog-post-date">
-                            <a href="#">22nd Apr, 2014</a>
+                            <a href="#"><?php echo get_the_date('dS M, Y' ) ; ?></a>
                         </div>
                         <!-- End Date -->
                     </div>
                     <div class="blog-post-details">
-                        <!-- Author Name -->
-                        <div class="blog-post-details-item blog-post-details-item-left user-icon">
-                            <i class="fa fa-user color-gray-light"></i>
-                            <a href="#">Admin</a>
-                        </div>
-                        <!-- End Author Name -->
                         <!-- Tags -->
                         <div class="blog-post-details-item blog-post-details-item-left blog-post-details-tags">
                             <i class="fa fa-tag color-gray-light"></i>
-                            <a href="#">PHP</a>,
-                            <a href="#">Javascript</a>,
-                            <a href="#">CoffeeScript</a>
+                            <?php
+                            $posttags = get_the_tags();
+                            if ($posttags){
+                                foreach ($posttags as $tag){
+                                    $tag_links[] = '<a href = "' .get_tag_link($tag->term_id) . '">' .$tag->name . '</a>';
+                                }
+                                echo join(', ', $tag_links);
+                            }
+                            ?>
                         </div>
                         <!-- End Tags -->
                         <!-- # of Comments -->
                         <div class="blog-post-details-item blog-post-details-item-left blog-post-details-item-last">
                             <a href="">
-                                <i class="fa fa-comments color-gray-light"></i>
-                                3 Comments
+                                <i class="fa fa-comments color-gray-light"></i><?php comments_popup_link('0','1','%'); ?>
+                                Comments
                             </a>
                         </div>
                         <!-- End # of Comments -->
@@ -45,35 +45,7 @@
                     <div class="blog-item">
                         <div class="clearfix"></div>
                         <div class="blog-post-body row margin-top-15">
-                            <div class="col-md-5">
-                                <img class="margin-bottom-20" src="assets/img/blog/image1.jpg" alt="image1">
-                            </div>
-                            <div class="col-md-7">
-                                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
-                                    Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna
-                                    aliquyam erat, sed diam voluptua.</p>
-                            </div>
-                            <div class="col-md-12">
-                                <p>
-                                    Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem ipsum
-                                    dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
-                                    clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
-                                    erat, sed diam voluptua.</p>
-                                <blockquote class="primary">
-                                    <p>
-                                        <em>"Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat."</em>
-                                    </p>
-                                    <small>
-                                        Someone famous in
-                                        <cite title="Source Title">Source Title</cite>
-                                    </small>
-                                </blockquote>
-                                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
-                                    Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna
-                                    aliquyam erat, sed diam voluptua.</p>
-                                <p>Ut summo deserunt sit, quaeque hendrerit assentior cu mei. Sale electram nam ut. Putent perpetua reformidans ex vix, libris nostrud tractatos cu sit, est porro omnes nominati eu. Cu nullam similique complectitur
-                                    eam. Viris phaedrum ullamcorper id eos.</p>
-                            </div>
+                            <?php the_content(); ?>
                         </div>
                         <div class="blog-item-footer">
                             <!-- About the Author -->
@@ -198,6 +170,9 @@
                         </div>
                     </div>
                 </div>
+                <?php endwhile; ?>
+                <?php else : echo wpautop( 'Постов для вывода не найдено.' );?>
+                <?php endif; ; ?>
                 <!-- End Blog Post -->
             </div>
             <!-- End Main Column -->
