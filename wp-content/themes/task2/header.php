@@ -65,17 +65,35 @@
                     <div class="visible-lg">
                         <ul id="hornavmenu" class="nav navbar-nav">
                             <li>
-                                <a href="index.html" class="fa-home active">Home</a>
+                                <a href="index.php" class="fa-home active">Home</a>
                             </li>
                             <li>
-                                <span class="fa-font ">Blog</span>
+                                <span class="fa-font ">Сategories</span>
                                 <ul>
+
+                               <?php
+                                $categories = get_terms('category', 'orderby=name&hide_empty=0');
+
+
+                                if($categories){
+
+                                    foreach ($categories as $cat){?>
                                     <li>
-                                        <a href="<?php get_page_link( page.php);?>">Blog</a>
+                                        <a href="<?php echo get_category_link( $cat->term_id );?>"><?php echo "<option value='{$cat->term_id}'>{$cat->name}</option>";?></a>
                                     </li>
-                                    <li>
-                                        <a href="blog-single.html">Blog Single Item</a>
+                                    <?php
+
+                                    }
+
+                                }else{?>
+                                   <li>
+                                       Рубрик не найдено.
                                     </li>
+                               <?php }
+                                ?>
+
+
+
                                 </ul>
                             </li>
                             <li>
