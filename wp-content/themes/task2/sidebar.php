@@ -2,47 +2,42 @@
 <div class="col-md-3">
     <!-- Blog Tags -->
     <div class="blog-tags">
-        <h3>Tags</h3>
-        <ul class="blog-tags">
-            <li>
-                <a href="#" class="blog-tag">HTML</a>
-            </li>
-            <li>
-                <a href="#" class="blog-tag">CSS</a>
-            </li>
-            <li>
-                <a href="#" class="blog-tag">JavaScript</a>
-            </li>
-            <li>
-                <a href="#" class="blog-tag">jQuery</a>
-            </li>
-            <li>
-                <a href="#" class="blog-tag">PHP</a>
-            </li>
-            <li>
-                <a href="#" class="blog-tag">Ruby</a>
-            </li>
-            <li>
-                <a href="#" class="blog-tag">CoffeeScript</a>
-            </li>
-            <li>
-                <a href="#" class="blog-tag">Grunt</a>
-            </li>
-            <li>
-                <a href="#" class="blog-tag">Bootstrap</a>
-            </li>
-            <li>
-                <a href="#" class="blog-tag">HTML5</a>
-            </li>
+          <ul class="blog-tags">
+
+              <?php
+              if ( function_exists('wp_tag_cloud'    ) ){
+                  echo '<h2>Tags</h2>';
+                  wp_tag_cloud('smallest=8&largest=22');
+              }
+              ?>
+
         </ul>
     </div>
     <!-- End Blog Tags -->
     <!-- Recent Posts -->
     <div class="recent-posts">
-        <h3>Recent Posts</h3>
-        <ul class="posts-list margin-top-10">
+        <h3>Last news</h3>
+            <ul class="posts-list margin-top-10">
             <li>
                 <div class="recent-post">
+                    <?php
+                    $args = array(
+                        'numberposts' => 6,
+                        'orderby'          => 'post_date',
+                        'order'            => 'DESC',
+                        'post_status' => 'publish',
+
+                    );
+
+                    $result = wp_get_recent_posts($args);
+
+                    foreach( $result as $p ){
+                        ?>
+
+                         <a href="<?php echo get_permalink($p['ID']) ?>"><?php echo $p['post_title'] ?></a><br />
+                        <?php
+                    }
+                    ?>
                     <a href="">
                         <img class="pull-left" src="assets/img/blog/thumbs/thumb1.jpg" alt="thumb1">
                     </a>

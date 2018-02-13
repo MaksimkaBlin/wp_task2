@@ -6,6 +6,7 @@
 <html lang="en">
 <!--<![endif]-->
 <head>
+    <script type="text/javascript" src="assets/js/jquery.min.js" type="text/javascript"></script>
     <!-- Title -->
     <title>Habitat - A Professional Bootstrap Template</title>
     <!-- Meta -->
@@ -25,7 +26,9 @@
     <link rel="stylesheet" href="assets/css/custom.css" rel="stylesheet">
     <!-- Google Fonts-->
     <link href="http://fonts.googleapis.com/css?family=Roboto+Condensed:400,300" rel="stylesheet" type="text/css">
+    <?php wp_head(); ?>
 </head>
+
 <body>
 <div id="body-bg">
     <!-- Phone/Email -->
@@ -97,7 +100,7 @@
                                 </ul>
                             </li>
                             <li>
-                                <a href="contact.html" class="fa-comment ">Contact</a>
+                                <a href="http://task2.com/?page_id=85" class="fa-comment ">Contact</a>
                             </li>
                         </ul>
                     </div>

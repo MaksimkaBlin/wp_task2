@@ -1,309 +1,71 @@
-<?php
-get_header();
-?>
+<?php get_header(); ?>
 <!-- === BEGIN CONTENT === -->
 <div id="content">
     <div class="container background-white">
         <div class="row margin-vert-30">
             <!-- Main Column -->
-            <div class="col-md-9">
-                <!-- Blog Post -->
-                <div class="blog-post padding-bottom-20">
-                    <!-- Blog Item Header -->
-                    <div class="blog-item-header">
-                        <!-- Title -->
-                        <h2>
-                            <a href="#">
-                                A Sample Blog Title</a>
-                        </h2>
-                        <div class="clearfix"></div>
-                        <!-- End Title -->
-                        <!-- Date -->
-                        <div class="blog-post-date">
-                            <a href="#">22nd Apr, 2014</a>
+            <?php if (have_posts()) :?>
+                <?php while (have_posts()) : the_post(); ?>
+                    <div class="col-md-9">
+                        <!-- Main Content -->
+                        <div class="headline">
+                            <h2><?php the_title();?></h2>
                         </div>
-                        <!-- End Date -->
-                    </div>
-                    <!-- End Blog Item Header -->
-                    <!-- Blog Item Details -->
-                    <div class="blog-post-details">
-                        <!-- Author Name -->
-                        <div class="blog-post-details-item blog-post-details-item-left">
-                            <i class="fa fa-user color-gray-light"></i>
-                            <a href="#">Admin</a>
-                        </div>
-                        <!-- End Author Name -->
-                        <!-- Tags -->
-                        <div class="blog-post-details-item blog-post-details-item-left blog-post-details-tags">
-                            <i class="fa fa-tag color-gray-light"></i>
-                            <a href="#">jQuery</a>,
-                            <a href="#">HTML5</a>,
-                            <a href="#">CSS</a>
-                        </div>
-                        <!-- End Tags -->
-                        <!-- # of Comments -->
-                        <div class="blog-post-details-item blog-post-details-item-left blog-post-details-item-last">
-                            <a href="">
-                                <i class="fa fa-comments color-gray-light"></i>
-                                2 Comments
-                            </a>
-                        </div>
-                        <!-- End # of Comments -->
-                    </div>
-                    <!-- End Blog Item Details -->
-                    <!-- Blog Item Body -->
-                    <div class="blog">
-                        <div class="clearfix"></div>
-                        <div class="blog-post-body row margin-top-15">
-                            <div class="col-md-5">
-                                <img class="margin-bottom-20" src="assets/img/blog/image1.jpg" alt="thumb1">
-                            </div>
-                            <div class="col-md-7">
-                                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
-                                    Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr.</p>
-                                <!-- Read More -->
-                                <a href="#" class="btn btn-primary">
-                                    Read More
-                                    <i class="icon-chevron-right readmore-icon"></i>
-                                </a>
-                                <!-- End Read More -->
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End Blog Item Body -->
-                </div>
-                <!-- End Blog Item -->
-                <!-- Blog Post -->
-                <div class="blog-post padding-bottom-20">
-                    <!-- Blog Item Header -->
-                    <div class="blog-item-header">
-                        <!-- Title -->
-                        <h2>
-                            <a href="#">
-                                Another Sample Blog</a>
-                        </h2>
-                        <div class="clearfix"></div>
-                        <!-- End Title -->
-                        <!-- Date -->
-                        <div class="blog-post-date">
-                            <a href="#">22nd Apr, 2014</a>
-                        </div>
-                        <!-- End Date -->
-                    </div>
-                    <!-- End Blog Item Header -->
-                    <!-- Blog Item Details -->
-                    <div class="blog-post-details">
-                        <!-- Author Name -->
-                        <div class="blog-post-details-item blog-post-details-item-left">
-                            <i class="fa fa-user color-gray-light"></i>
-                            <a href="#">Admin</a>
-                        </div>
-                        <!-- End Author Name -->
-                        <!-- Tags -->
-                        <div class="blog-post-details-item blog-post-details-item-left blog-post-details-tags">
-                            <i class="fa fa-tag color-gray-light"></i>
-                            <a href="#">PHP</a>,
-                            <a href="#">Ruby</a>,
-                            <a href="#">Javascript</a>
-                        </div>
-                        <!-- End Tags -->
-                        <!-- # of Comments -->
-                        <div class="blog-post-details-item blog-post-details-item-left blog-post-details-item-last">
-                            <a href="">
-                                <i class="fa fa-comments color-gray-light"></i>
-                                3 Comments
-                            </a>
-                        </div>
-                        <!-- End # of Comments -->
-                    </div>
-                    <!-- End Blog Item Details -->
-                    <!-- Blog Item Body -->
-                    <div class="blog">
-                        <div class="clearfix"></div>
-                        <div class="blog-post-body row margin-top-15">
-                            <div class="col-md-5">
-                                <img class="margin-bottom-20" src="assets/img/blog/image2.jpg" alt="thumb2">
-                            </div>
-                            <div class="col-md-7">
-                                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
-                                    Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr.</p>
-                                <!-- Read More -->
-                                <a href="#" class="btn btn-primary">
-                                    Read More
-                                    <i class="icon-chevron-right readmore-icon"></i>
-                                </a>
-                                <!-- End Read More -->
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End Blog Item Body -->
-                </div>
-                <!-- End Blog Item -->
-                <!-- Blog Post -->
-                <div class="blog-post padding-bottom-20">
-                    <!-- Blog Item Header -->
-                    <div class="blog-item-header">
-                        <!-- Title -->
-                        <h2>
-                            <a href="#">
-                                Yet Another Sample Blog Title</a>
-                        </h2>
-                        <div class="clearfix"></div>
-                        <!-- End Title -->
-                        <!-- Date -->
-                        <div class="blog-post-date">
-                            <a href="#">22nd Apr, 2014</a>
-                        </div>
-                        <!-- End Date -->
-                    </div>
-                    <!-- End Blog Item Header -->
-                    <!-- Blog Item Details -->
-                    <div class="blog-post-details">
-                        <!-- Author Name -->
-                        <div class="blog-post-details-item blog-post-details-item-left">
-                            <i class="fa fa-user color-gray-light"></i>
-                            <a href="#">Admin</a>
-                        </div>
-                        <!-- End Author Name -->
-                        <!-- Tags -->
-                        <div class="blog-post-details-item blog-post-details-item-left blog-post-details-tags">
-                            <i class="fa fa-tag color-gray-light"></i>
-                            <a href="#">jQuery</a>,
-                            <a href="#">HTML</a>,
-                            <a href="#">Grunt</a>
-                        </div>
-                        <!-- End Tags -->
-                        <!-- # of Comments -->
-                        <div class="blog-post-details-item blog-post-details-item-left blog-post-details-item-last">
-                            <a href="">
-                                <i class="fa fa-comments color-gray-light"></i>
-                                1 Comments
-                            </a>
-                        </div>
-                        <!-- End # of Comments -->
-                    </div>
-                    <!-- End Blog Item Details -->
-                    <!-- Blog Item Body -->
-                    <div class="blog">
-                        <div class="clearfix"></div>
-                        <div class="blog-post-body row margin-top-15">
-                            <div class="col-md-5">
-                                <img class="margin-bottom-20" src="assets/img/blog/image3.jpg" alt="thumb3">
-                            </div>
-                            <div class="col-md-7">
-                                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
-                                    Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr.</p>
-                                <!-- Read More -->
-                                <a href="#" class="btn btn-primary">
-                                    Read More
-                                    <i class="icon-chevron-right readmore-icon"></i>
-                                </a>
-                                <!-- End Read More -->
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End Blog Item Body -->
-                </div>
-                <!-- End Blog Item -->
-                <!-- Blog Post -->
-                <div class="blog-post padding-bottom-20">
-                    <!-- Blog Item Header -->
-                    <div class="blog-item-header">
-                        <!-- Title -->
-                        <h2>
-                            <a href="#">
-                                And One More Sample Blog Title</a>
-                        </h2>
-                        <div class="clearfix"></div>
-                        <!-- End Title -->
-                        <!-- Date -->
-                        <div class="blog-post-date">
-                            <a href="#">22nd Apr, 2014</a>
-                        </div>
-                        <!-- End Date -->
-                    </div>
-                    <!-- End Blog Item Header -->
-                    <!-- Blog Item Details -->
-                    <div class="blog-post-details">
-                        <!-- Author Name -->
-                        <div class="blog-post-details-item blog-post-details-item-left">
-                            <i class="fa fa-user color-gray-light"></i>
-                            <a href="#">Admin</a>
-                        </div>
-                        <!-- End Author Name -->
-                        <!-- Tags -->
-                        <div class="blog-post-details-item blog-post-details-item-left blog-post-details-tags">
-                            <i class="fa fa-tag color-gray-light"></i>
-                            <a href="#">HTML</a>,
-                            <a href="#">HTML5</a>,
-                            <a href="#">CSS3</a>
-                        </div>
-                        <!-- End Tags -->
-                        <!-- # of Comments -->
-                        <div class="blog-post-details-item blog-post-details-item-left blog-post-details-item-last">
-                            <a href="">
-                                <i class="fa fa-comments color-gray-light"></i>
-                                5 Comments
-                            </a>
-                        </div>
-                        <!-- End # of Comments -->
-                    </div>
-                    <!-- End Blog Item Details -->
-                    <!-- Blog Item Body -->
-                    <div class="blog">
-                        <div class="clearfix"></div>
-                        <div class="blog-post-body row margin-top-15">
-                            <div class="col-md-5">
-                                <img class="margin-bottom-20" src="assets/img/blog/image4.jpg" alt="thumb4">
-                            </div>
-                            <div class="col-md-7">
-                                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
-                                    Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr.</p>
-                                <!-- Read More -->
-                                <a href="#" class="btn btn-primary">
-                                    Read More
-                                    <i class="icon-chevron-right readmore-icon"></i>
-                                </a>
-                                <!-- End Read More -->
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End Blog Item Body -->
-                </div>
-                <!-- End Blog Item -->
-                <!-- Pagination -->
-                <ul class="pagination">
-                    <li>
-                        <a href="#">&laquo;</a>
-                    </li>
-                    <li class="active">
-                        <a href="#">1</a>
-                    </li>
-                    <li>
-                        <a href="#">2</a>
-                    </li>
-                    <li>
-                        <a href="#">3</a>
-                    </li>
-                    <li class="disabled">
-                        <a href="#">4</a>
-                    </li>
-                    <li>
-                        <a href="#">5</a>
-                    </li>
-                    <li>
-                        <a href="#">&raquo;</a>
-                    </li>
-                </ul>
-                <!-- End Pagination -->
-            </div>
-            <!-- End Main Column -->
+                        <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas feugiat. Et harum quidem rerum facilis est et expedita distinctio lorem ipsum dolor
+                            sit amet, consectetur adipiscing elit landitiis.</p>
+                        <br>
+                        <!-- Contact Form -->
+                        <?php the_content(); ?>
 
+                        <!-- End Contact Form -->
+                        <!-- End Main Content -->
+                    </div>
+                    <!-- End Main Column -->
+                    <!-- Side Column -->
+                    <div class="col-md-3">
+                        <!-- Recent Posts -->
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">Contact Info</h3>
+                            </div>
+                            <div class="panel-body">
+                                <p>Lorem ipsum dolor sit amet, no cetero voluptatum est, audire sensibus maiestatis vis et. Vitae audire prodesset an his. Nulla ubique omnesque in sit.</p>
+                                <ul class="list-unstyled">
+                                    <li>
+                                        <i class="fa-phone color-primary"></i>+353-44-55-66</li>
+                                    <li>
+                                        <i class="fa-envelope color-primary"></i>info@example.com</li>
+                                    <li>
+                                        <i class="fa-home color-primary"></i>http://www.example.com</li>
+                                </ul>
+                                <ul class="list-unstyled">
+                                    <li>
+                                        <strong class="color-primary">Monday-Friday:</strong>9am to 6pm</li>
+                                    <li>
+                                        <strong class="color-primary">Saturday:</strong>10am to 3pm</li>
+                                    <li>
+                                        <strong class="color-primary">Sunday:</strong>Closed</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- End recent Posts -->
+                        <!-- About -->
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">About</h3>
+                            </div>
+                            <div class="panel-body">
+                                Et harum quidem rerum facilis est et expedita distinctio lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut non libero consectetur adipiscing elit magna. Sed et quam lacus. Fusce condimentum eleifend enim a feugiat.
+                            </div>
+                        </div>
+                        <!-- End About -->
+                    </div>
+                    <!-- End Side Column -->
+                <?php endwhile; ?>
+            <?php else : echo wpautop( 'Постов для вывода не найдено.' );?>
+            <?php endif; ; ?>
         </div>
     </div>
 </div>
 <!-- === END CONTENT === -->
-<?php
-get_sidebar();
-get_footer();
-?>
+<?php get_footer(); ?>

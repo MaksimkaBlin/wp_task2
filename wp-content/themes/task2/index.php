@@ -1,110 +1,103 @@
 <?php get_header(); ?>
     <!-- === BEGIN CONTENT === -->
-    <div id="content">
-        <div class="container background-white">
-            <div class="row margin-vert-30">
-                <!-- Main Column -->
-                <div class="col-md-9">
-                    <!-- Blog Post -->
 
-                        <!-- Blog Item Header -->
-                        <?php if (have_posts()) :?>
-                            <?php while (have_posts()) : the_post(); ?>
-
-                    <div class="blog-post padding-bottom-20">
-                        <div class="blog-item-header">
-                            <!-- Title -->
-                            <h2>
-                                <a href="<?php the_permalink();?>"><?php the_title();?></a>
-                            </h2>
-                            <div class="clearfix"></div>
-                            <!-- End Title -->
-                            <!-- Date -->
-                            <div class="blog-post-date">
-                                <a href="#"><?php echo get_the_date('dS M, Y' ) ; ?></a>
-                            </div>
-                            <!-- End Date -->
-                        </div>
-                        <!-- End Blog Item Header -->
-                        <!-- Blog Item Details -->
-                        <div class="blog-post-details">
-                            <!-- Tags -->
-                            <div class="blog-post-details-item blog-post-details-item-left blog-post-details-tags">
-                                <i class="fa fa-tag color-gray-light"></i>
-                                <a href="#">jQuery</a>,
-                                <a href="#">HTML5</a>,
-                                <a href="#">CSS</a>
-                            </div>
-                            <!-- End Tags -->
-                            <!-- # of Comments -->
-                            <div class="blog-post-details-item blog-post-details-item-left blog-post-details-item-last">
-                                <a href="">
-                                    <i class="fa fa-comments color-gray-light"></i>
-                                    <?php comments_popup_link('0','1','%'); ?>
-                                    Comments
-                                </a>
-                            </div>
-                            <!-- End # of Comments -->
-                        </div>
-                        <!-- End Blog Item Details -->
-                        <!-- Blog Item Body -->
-                        <div class="blog">
-                            <div class="clearfix"></div>
-                            <div class="blog-post-body row margin-top-15">
-                                <div class="col-md-5">
-                                    <img class="margin-bottom-20" src="assets/img/blog/image1.jpg" alt="thumb1">
-                                </div>
-                                <div class="col-md-7">
-                                    <?php the_excerpt();?>
-                                    <!-- Read More -->
-                                    <a href="<?php the_permalink();?>" class="btn btn-primary">
-                                        Read More
-                                        <i class="icon-chevron-right readmore-icon"></i>
-                                    </a>
-                                    <!-- End Read More -->
-                                </div>
-                            </div>
-                        </div>
-                        <!-- End Blog Item Body -->
+    <div id="slideshow" class="bottom-border-shadow">
+        <div class="container no-padding background-white bottom-border">
+            <div class="row">
+                <!-- Carousel Slideshow -->
+                <div id="carousel-example" class="carousel slide" data-ride="carousel">
+                    <div class="clearfix"></div>
+                    <div class="carousel-inner">
+                        <?php echo do_shortcode('[metaslider id="120"]'); ?>
                     </div>
-                    <!-- End Blog Item -->
-                            <?php endwhile; ?>
-                            <!-- Pagination -->
-                            <ul class="pagination">
-                                <li>
-                                    <a href="#">&laquo;</a>
-                                </li>
-                                <li class="active">
-                                    <a href="#">1</a>
-                                </li>
-                                <li>
-                                    <a href="#">2</a>
-                                </li>
-                                <li>
-                                    <a href="#">3</a>
-                                </li>
-                                <li class="disabled">
-                                    <a href="#">4</a>
-                                </li>
-                                <li>
-                                    <a href="#">5</a>
-                                </li>
-                                <li>
-                                    <a href="#">&raquo;</a>
-                                </li>
-                            </ul>
-                            <!-- End Pagination -->
-
-                        <?php else : echo wpautop( 'Постов для вывода не найдено.' );?>
-                        <?php endif ; ?>
-
-
+                    </div>
                 </div>
-                <!-- End Main Column -->
-                <?php get_sidebar();?>
+        </div>
+    </div>
+
+    <div id="icons" class="bottom-border-shadow">
+        <div class="container background-grey bottom-border">
+            <div class="row padding-vert-60">
+                <!-- Icons -->
+                <div class="col-md-4 text-center">
+                    <i class="fa-cogs fa-4x color-primary animate fadeIn"></i>
+                    <h2 class="padding-top-10 animate fadeIn">Velit esse molestie</h2>
+                    <p class="animate fadeIn">Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer.</p>
+                </div>
+                <div class="col-md-4 text-center">
+                    <i class="fa-cloud-download fa-4x color-primary animate fadeIn"></i>
+                    <h2 class="padding-top-10 animate fadeIn">Quam nunc putamus</h2>
+                    <p class="animate fadeIn">Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer.</p>
+                </div>
+                <div class="col-md-4 text-center">
+                    <i class="fa-bar-chart fa-4x color-primary animate fadeIn"></i>
+                    <h2 class="padding-top-10 animate fadeIn">Placerat facer possim</h2>
+                    <p class="animate fadeIn">Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer.</p>
+                </div>
+                <!-- End Icons -->
             </div>
         </div>
+    </div>
+    <div id="content" class="bottom-border-shadow">
+        <div class="container background-white bottom-border">
+            <div class="row margin-vert-30">
+                <!-- Main Text -->
+                <div class="col-md-6">
+                    <h2>Welcome to Habitat</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit
+                        lobortis nisl ut aliquip ex ea commodo consequat.</p>
+                    <p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit
+                        augue duis dolore te feugait nulla facilisi. Cras non sem sem, at eleifend mi. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Curabitur eget nisl
+                        a risus.</p>
+                </div>
+                <!-- End Main Text -->
+                <div class="col-md-6">
+                    <h3 class="padding-vert-10">Key Features</h3>
+                    <p>Duis sit amet orci et lectus dictum auctor a nec enim. Donec suscipit fringilla elementum. Suspendisse nec justo ut felis ornare tincidunt vitae et lectus.</p>
+                    <ul class="tick animate fadeInRight">
+                        <li>Responsive Design</li>
+                        <li>Built with LESS</li>
+                        <li>Font Choosers</li>
+                        <li>Replaceable Background Image</li>
+                        <li>Custom Module Widths</li>
+                        <li>All Module Extensions Included</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Portfolio -->
+    <div id="portfolio" class="bottom-border-shadow">
+        <div class="container bottom-border">
+            <div class="row padding-top-40">
+                <ul class="portfolio-group">
+                    <?php
 
+                    $categories = get_categories( 'orderby=ID&hide_empty=0');
+                    if($categories){
+                        foreach ($categories as $cat){?>
+                            <li class="portfolio-item col-sm-4 col-xs-6 margin-bottom-40">
+                                <a href="<?php echo get_category_link( $cat->term_id );?>">
+                                <figure class="animate fadeInLeft">
+
+                                    <?php echo '<img src="http://task2.com/wp-content/uploads/2018/02/default_banner.jpg" />'; ?>
+                                    <figcaption>
+                                        <h3><?php   echo "<option value='{$cat->term_id}'>{$cat->name}</option>";?></h3>
+                                    </figcaption>
+                                </figure>
+                                </a>
+                            </li>
+                            <?php
+                        }
+                    }else{?>
+                        <li>
+                            Рубрик не найдено.
+                        </li>
+                    <?php }
+                    ?>
+                </ul>
+            </div>
+        </div>
     </div>
     <!-- === END CONTENT === -->
 <?php get_footer(); ?>

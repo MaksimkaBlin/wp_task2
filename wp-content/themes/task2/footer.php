@@ -83,6 +83,10 @@
 </div>
 <!-- End Footer -->
 <!-- JS -->
+
+
+
+
 <script type="text/javascript" src="assets/js/jquery.min.js" type="text/javascript"></script>
 <script type="text/javascript" src="assets/js/bootstrap.min.js" type="text/javascript"></script>
 <script type="text/javascript" src="assets/js/scripts.js"></script>
@@ -99,6 +103,7 @@
 <!-- Modernizr -->
 <script src="assets/js/modernizr.custom.js" type="text/javascript"></script>
 <!-- End JS -->
+<?php wp_footer(); ?>
 </body>
 </html>
 <!-- === END FOOTER === -->

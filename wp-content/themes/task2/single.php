@@ -23,7 +23,7 @@
                         <div class="blog-post-details-item blog-post-details-item-left blog-post-details-tags">
                             <i class="fa fa-tag color-gray-light"></i>
                             <?php
-                            $posttags = get_the_tags();
+                            $tags = get_the_tags();
                             if ($posttags){
                                 foreach ($posttags as $tag){
                                     $tag_links[] = '<a href = "' .get_tag_link($tag->term_id) . '">' .$tag->name . '</a>';
