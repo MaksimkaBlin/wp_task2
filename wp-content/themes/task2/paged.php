@@ -9,26 +9,23 @@
 
                     <!-- Blog Item Header -->
                     <?php if (have_posts()) :?>
+                        <?php  $current_page = (get_query_var('paged')) ? get_query_var('paged') : 1;
+                        $params = array(
+                            'posts_per_page' => 3, // количество постов на странице
+                            //'post_type'       => 'cat', // тип постов
+                            'paged'           => $current_page // текущая страница
+                        );
+                        query_posts($params);
 
-                        <?php
-
-$params = array(
-    'paged' => get_query_var('paged'), // текущая страница
-    'cat'=>get_query_var('cat'),
-    'posts_per_page' => 3, // количество постов на странице
-);
-query_posts($params);
-
-$wp_query->is_archive = true;
-//$wp_query->is_home = false;
-
-                        while (have_posts()) : the_post(); ?>
+                        $wp_query->is_archive = true;
+                        $wp_query->is_home = false;?>
+                        <?php while (have_posts()) : the_post(); ?>
 
                             <div class="blog-post padding-bottom-20">
                                 <div class="blog-item-header">
                                     <!-- Title -->
                                     <h2>
-                                        <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>
+                                        <a href="<?php the_permalink();?>"><?php the_title();?></a>
                                     </h2>
                                     <div class="clearfix"></div>
                                     <!-- End Title -->
@@ -89,10 +86,32 @@ $wp_query->is_archive = true;
                         <!-- Pagination -->
 
                         <ul class="pagination">
-                            <?php wp_pagenavi(); ?>
+                            <li>
+                                <a href="#">&laquo;</a>
+                            </li>
+                            <li class="active">
+                                <a href="#">1</a>
+                            </li>
+                            <li>
+                                <a href="#">2</a>
+                            </li>
+                            <li>
+                                <a href="#">3</a>
+                            </li>
+                            <li class="disabled">
+                                <a href="#">4</a>
+                            </li>
+                            <li>
+                                <a href="#">5</a>
+                            </li>
+                            <li>
+                                <a href="#">&raquo;</a>
+                            </li>
                         </ul>
-<!--                         End Pagination-->
+                        <!--                         End Pagination-->
+                        <?php
 
+                        the_posts_pagination(); ?>
 
                     <?php else : echo wpautop( 'Постов для вывода не найдено.' );?>
                     <?php endif ; ?>
@@ -107,4 +126,10 @@ $wp_query->is_archive = true;
 
     </div>
     <!-- === END CONTENT === -->
-<?php get_footer(); ?>
+<?php get_footer(); ?><?php
+/**
+ * Created by PhpStorm.
+ * User: максим
+ * Date: 14.02.2018
+ * Time: 11:37
+ */

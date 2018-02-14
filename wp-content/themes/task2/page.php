@@ -28,6 +28,7 @@
                             <div class="panel-heading">
                                 <h3 class="panel-title">Contact Info</h3>
                             </div>
+
                             <div class="panel-body">
                                 <p>Lorem ipsum dolor sit amet, no cetero voluptatum est, audire sensibus maiestatis vis et. Vitae audire prodesset an his. Nulla ubique omnesque in sit.</p>
                                 <ul class="list-unstyled">

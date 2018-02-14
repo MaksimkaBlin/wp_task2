@@ -57,11 +57,9 @@
                                 <div class="blog">
                                     <div class="clearfix"></div>
                                     <div class="blog-post-body row margin-top-15">
-                                        <div class="col-md-5">
-                                            <img class="margin-bottom-20" src="assets/img/blog/image1.jpg" alt="thumb1">
-                                        </div>
+
                                         <div class="col-md-7">
-                                            <?php the_excerpt();?>
+                                            <?php the_content();?>
                                             <!-- Read More -->
                                             <a href="<?php the_permalink();?>" class="btn btn-primary">
                                                 Read More

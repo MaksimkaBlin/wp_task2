@@ -6,6 +6,7 @@
 <html lang="en">
 <!--<![endif]-->
 <head>
+
     <script type="text/javascript" src="assets/js/jquery.min.js" type="text/javascript"></script>
     <!-- Title -->
     <title>Habitat - A Professional Bootstrap Template</title>
@@ -51,8 +52,8 @@
             <div class="row">
                 <!-- Logo -->
                 <div class="logo">
-                    <a href="index.html" title="">
-                        <img src="assets/img/logo.png" alt="Logo" />
+                    <a href="index.php" title="">
+                        <?php echo do_shortcode('[metaslider id="147"]'); ?>
                     </a>
                 </div>
                 <!-- End Logo -->

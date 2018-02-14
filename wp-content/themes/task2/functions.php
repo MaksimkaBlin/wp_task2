@@ -1,4 +1,15 @@
-<?php function true_register_wp_sidebars() {
+
+
+
+<?php
+add_theme_support('post-thumbnails'); // поддержка миниатюр
+set_post_thumbnail_size(50, 50, false); //размер миниатюр
+
+
+
+
+
+function true_register_wp_sidebars() {
 
 /* В боковой колонке - первый сайдбар */
 register_sidebar(
@@ -28,3 +39,10 @@ array(
 }
 
 add_action( 'widgets_init', 'true_register_wp_sidebars' );
+
+
+function my_after_setup_theme() {
+    add_theme_support( 'site-logo' );
+}
+add_action( 'after_setup_theme', 'my_after_setup_theme' );
+

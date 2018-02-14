@@ -1,4 +1,5 @@
 <?php get_header(); ?>
+
     <!-- === BEGIN CONTENT === -->
 
     <div id="slideshow" class="bottom-border-shadow">
@@ -8,7 +9,7 @@
                 <div id="carousel-example" class="carousel slide" data-ride="carousel">
                     <div class="clearfix"></div>
                     <div class="carousel-inner">
-                        <?php echo do_shortcode('[metaslider id="120"]'); ?>
+                        <?php echo do_shortcode('[metaslider id="149"]'); ?>
                     </div>
                     </div>
                 </div>
@@ -19,6 +20,7 @@
         <div class="container background-grey bottom-border">
             <div class="row padding-vert-60">
                 <!-- Icons -->
+
                 <div class="col-md-4 text-center">
                     <i class="fa-cogs fa-4x color-primary animate fadeIn"></i>
                     <h2 class="padding-top-10 animate fadeIn">Velit esse molestie</h2>
