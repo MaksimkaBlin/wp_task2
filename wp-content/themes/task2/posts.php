@@ -19,8 +19,8 @@ $params = array(
 );
 query_posts($params);
 
-$wp_query->is_archive = true;
-//$wp_query->is_home = false;
+$wp_query->is_post = true;
+$wp_query->is_index = false;
 
                         while (have_posts()) : the_post(); ?>
 

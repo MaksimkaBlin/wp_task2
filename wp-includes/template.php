@@ -190,13 +190,13 @@ function get_author_template() {
  *
  * 1. category-{slug}.php
  * 2. category-{id}.php
- * 3. category.php
+ * 3. posts.php
  *
  * An example of this is:
  *
  * 1. category-news.php
  * 2. category-2.php
- * 3. category.php
+ * 3. posts.php
  *
  * The template hierarchy and template path are filterable via the {@see '$type_template_hierarchy'}
  * and {@see '$type_template'} dynamic hooks, where `$type` is 'category'.
@@ -224,7 +224,7 @@ function get_category_template() {
 		$templates[] = "category-{$category->slug}.php";
 		$templates[] = "category-{$category->term_id}.php";
 	}
-	$templates[] = 'category.php';
+	$templates[] = 'posts.php';
 
 	return get_query_template( 'category', $templates );
 }
