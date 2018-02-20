@@ -5,7 +5,7 @@
         <div class="row margin-vert-30">
             <!-- Main Column -->
             <?php if (have_posts()) :?>
-                <?php while (have_posts()) : the_post(); ?>
+                <?php while (have_posts()) : the_post(); ?>g
                     <div class="col-md-9">
                         <!-- Main Content -->
                         <div class="headline">

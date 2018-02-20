@@ -47,27 +47,18 @@
         <div class="container background-white bottom-border">
             <div class="row margin-vert-30">
                 <!-- Main Text -->
+<?php if (have_posts()) :
+    $args = array( 'posts_per_page' => 1, 'order' => 'DESC' );
+    query_posts($args);
+    while (have_posts()) : the_post(); ?>
                 <div class="col-md-6">
-                    <h2>Welcome to Habitat</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit
-                        lobortis nisl ut aliquip ex ea commodo consequat.</p>
-                    <p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit
-                        augue duis dolore te feugait nulla facilisi. Cras non sem sem, at eleifend mi. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Curabitur eget nisl
-                        a risus.</p>
+                    <h2><?php the_title();?><a href="<?php the_permalink() ?>"></h2>
+                    <?php the_content(); ?>
                 </div>
-                <!-- End Main Text -->
-                <div class="col-md-6">
-                    <h3 class="padding-vert-10">Key Features</h3>
-                    <p>Duis sit amet orci et lectus dictum auctor a nec enim. Donec suscipit fringilla elementum. Suspendisse nec justo ut felis ornare tincidunt vitae et lectus.</p>
-                    <ul class="tick animate fadeInRight">
-                        <li>Responsive Design</li>
-                        <li>Built with LESS</li>
-                        <li>Font Choosers</li>
-                        <li>Replaceable Background Image</li>
-                        <li>Custom Module Widths</li>
-                        <li>All Module Extensions Included</li>
-                    </ul>
-                </div>
+                
+    <?php endwhile; wp_reset_query(); ?>
+<?php else : echo wpautop( 'Постов для вывода не найдено.' );?>
+<?php endif; ; ?>
             </div>
         </div>
     </div>
